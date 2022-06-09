@@ -1,14 +1,14 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   tickers: [],
   prevTickers: [],
   wishlistTickers: [],
-  fetchPause: false,
+  toggleFetch: true,
 };
 
 export const tickerSlice = createSlice({
-  name: "tickers",
+  name: 'tickers',
   initialState,
   reducers: {
     setTickers: (state, action) => {
@@ -51,6 +51,9 @@ export const tickerSlice = createSlice({
         (item) => item !== action.payload
       );
     },
+    toggleStartPause: (state) => {
+      state.toggleFetch = !state.toggleFetch;
+    },
   },
 });
 
@@ -59,6 +62,7 @@ export const {
   setPrevTickers,
   addTickerToWishlist,
   removeTickerFromWishlist,
+  toggleStartPause,
 } = tickerSlice.actions;
 
 export default tickerSlice.reducer;
