@@ -7,8 +7,12 @@ import WishlistTable from './components/tables/WishlistTable';
 
 import { Switch } from 'antd';
 
-import { useGetTickersQuery } from './redux';
-import { setTickers, setPrevTickers, toggleStartPause } from './redux';
+import {
+  setTickers,
+  setPrevTickers,
+  toggleStartPause,
+  useGetTickersQuery,
+} from './redux';
 import { useDispatch, useSelector } from 'react-redux';
 
 function App() {

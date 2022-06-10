@@ -93,7 +93,7 @@ const WishlistTable = () => {
       dataIndex: 'lastTradeTime',
       key: 'lastTradeTime',
       align: 'center',
-      render: (lastTradeTime, record) => {
+      render: (lastTradeTime) => {
         const formatedData = moment(lastTradeTime).format(
           'dddd, MMMM Do YYYY, h:mm:ss a'
         );
